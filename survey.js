@@ -15,29 +15,36 @@ answerKeys:             ["name", "activity", "listen", "meal", "food", "sport", 
 answers:                {},
 
 profileB:                function(){
-this.questions.forEach(question => console.log(question))
+for (let i = 0; i < this.answerKeys.length; i++) {
+  let aKey = this.answerKeys[i];
+  rl.question(this.questions[i], (answer) => {
+    this.answers[aKey] = answer;
+
+    console.log(this.answers);
+
+  });
+
+
+
+
 
 }
-
-
-
-
-
+}
 }
 
-const profileFacts = {};
+// const profileFacts = {};
 
-rl.question("What's your name?", (answer) => {
-  profileFacts.name = answer;
-  rl.close();
-  // console.log(profileFacts);
-});
+// rl.question("What's your name?", (answer) => {
+//   profileFacts.name = answer;
+//   rl.close();
+//   // console.log(profileFacts);
+// });
 
-rl.question("What is something you enjoy doing?", (answer) => {
-  profileFacts.activity = answer;
-  rl.close();
-  console.log(profileFacts);
-});
+// rl.question("What is something you enjoy doing?", (answer) => {
+//   profileFacts.activity = answer;
+//   rl.close();
+//   console.log(profileFacts);
+// });
 
 
 
