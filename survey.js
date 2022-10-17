@@ -8,13 +8,15 @@ const rl = readline.createInterface({
 
 const profileBuilder = {
 
-questions:              ["What's your name?", "What is something you enjoy doing?", "What do you like to listen to while doing that?", "What is your favorite meal (eg: dinner, breakfast?", "What's your favourite thing to eat for that meal?", "Which sport is your absolute favourite?","What is your superpower?"],
+questions:              ["What's your name?", "What is something you enjoy doing?", "What do you like to listen to while doing that?", "What is your favorite meal (eg: dinner, breakfast)?", "What's your favourite thing to eat for that meal?", "Which sport is your absolute favourite?","What is your superpower?"],
+
+answerKeys:             ["name", "activity", "listen", "meal", "food", "sport", "superpower"],
 
 answers:                {},
 
 profileB:                function(){
+this.questions.forEach(question => console.log(question))
 
-  
 }
 
 
@@ -57,4 +59,4 @@ rl.question("What is something you enjoy doing?", (answer) => {
 //   rl.close();
 // });
 
-console.log(profileFacts);
+console.log(profileBuilder.profileB());
